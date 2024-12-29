@@ -1,0 +1,12 @@
+<mat-toolbar class="">
+    <div class="col-md-8 ps-5 d-flex gap-3 align-items-center">
+        @if (isMenuVisible) {
+            <mat-icon (click)="toggleMenu()" >menu</mat-icon>
+        }
+        <img src="/assets/logo.png" alt="logo" routerLink="/" class="img-fluid myLogo" >
+    </div>
+    <div class="col d-flex justify-content-evenly">
+        <button mat-flat-button class="myBtn" > <mat-icon>call</mat-icon> Talk to expert</button>
+        <button mat-flat-button class="myBtn" (click)="openDialog('500ms', '500ms')" >Sign in</button>
+    </div>
+</mat-toolbar>

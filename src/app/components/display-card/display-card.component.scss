@@ -1,0 +1,9 @@
+.filter-btn {
+    border: 1px solid rgb(57, 106, 98) !important;
+    border-radius: 20px;
+    &:hover{
+        background-color:  rgb(57, 106, 98) !important;
+        color: #fff !important;
+        border: none !important;
+    }
+}

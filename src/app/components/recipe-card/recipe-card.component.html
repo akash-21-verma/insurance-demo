@@ -1,0 +1,23 @@
+<div class="card-container  ">
+  <mat-card class="example-card" appearance="outlined" [ngStyle]="{'cursor': icClickable ? 'pointer' : ''}">
+    @if (isSubtitleVisible) {
+      <mat-card-subtitle class="mySubtitle"> {{subtitleValue}}</mat-card-subtitle>
+    }@else {
+      <mat-card-subtitle class="mySubtitle"> </mat-card-subtitle>
+    }
+    
+    <mat-card-content class="d-flex flex-column p-0 m-0 justify-content-center">
+      @if (icClickable) {
+          <img [src]="iconName" alt="img logo" class="myImg" (click)="NavToDashBoard()">
+          <span class="d-flex justify-content-center">{{title}}</span>
+      }@else {
+      <img [src]="iconName" alt="img logo" class="myImg">
+      @if (isSubtitleVisible) {
+        <span class="d-flex justify-content-center">{{title}}</span>
+      }@else {
+        <span class="d-flex justify-content-center">{{title}}</span>
+      }
+      }
+    </mat-card-content>
+  </mat-card>
+</div>

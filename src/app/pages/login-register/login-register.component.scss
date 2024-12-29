@@ -1,0 +1,22 @@
+.card{
+    width: 40vw;
+}
+.my-Link{
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+    margin: 0 2%;
+}
+
+.myLogin{
+    background: linear-gradient(rgb(255, 255, 255) 0%, rgb(193, 216, 212) 0%, rgb(255, 255, 255) 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.upper{
+    margin: 2% 4%;
+    .heading{
+        font-size: 35px;
+    }
+}

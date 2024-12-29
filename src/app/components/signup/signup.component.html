@@ -1,0 +1,29 @@
+<div class=" d-flex justify-content-between">
+    <h2 mat-dialog-title>Sign In</h2>
+    <mat-dialog-actions>
+        <span mat-dialog-close> <mat-icon> cancel </mat-icon> </span>
+    </mat-dialog-actions>
+</div>
+<mat-dialog-content>
+
+    <mat-form-field appearance="outline" class="w-100 my-2 px-2">
+        <mat-label>Phone Number</mat-label>
+        <span matPrefix> &nbsp; +91 &nbsp;</span>
+        <input matInput type="tel" placeholder="9XX-XXX-XXXX" maxlength="10">
+    </mat-form-field>
+
+    @if (isOTPVisible) {
+    <mat-form-field appearance="outline" class="w-100 my-2 px-2">
+        <mat-label>OTP</mat-label>
+        <input matInput type="text" placeholder="XXX-XXX" maxlength="6">
+    </mat-form-field>
+    }
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    @if(isOTPVisible){
+        <button mat-flat-button class="myBtn w-100 mx-4 mb-3" (click)="MoveToAdmin()"> Sign in with OTP </button>
+    }@else {
+        <button mat-flat-button class="myBtn w-100 mx-4 mb-3" (click)="showOTPInput()" > Get OTP </button>
+    }
+</mat-dialog-actions>
