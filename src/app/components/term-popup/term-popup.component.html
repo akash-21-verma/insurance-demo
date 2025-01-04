@@ -1,0 +1,147 @@
+<div class="" *ngIf="firstStep">
+  <h5 mat-dialog-title class="text-center">Just answer simple questions</h5>
+  <mat-divider></mat-divider>
+  <mat-dialog-content class="mat-typography">
+    <h2 class="text-center">Please choose your occupation type</h2>
+    <div class="col d-flex justify-content-evenly my-5">
+      <div class="col-md-10 d-flex justify-content-evenly py-3">
+        <div class="card py-3 px-5">
+          <mat-radio-button> Salaried </mat-radio-button>
+        </div>
+
+        <div class="card py-3 px-5">
+          <mat-radio-button>Self Employed</mat-radio-button>
+        </div>
+
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" class="pe-5">
+    <button mat-button cdkFocusInitial class="myBtn px-5 py-3" (click)="moveToSecond()">Continue > </button>
+  </mat-dialog-actions>
+
+</div>
+
+<!-- second step -->
+<div class="d-flex flex-column h-100 justify-content-center" *ngIf="secondStep">
+  <h5 mat-dialog-title class="text-center">Just answer simple questions</h5>
+  <mat-divider></mat-divider>
+
+  <mat-dialog-content class="mat-typography">
+    <h2 class="text-center">Select annual salary</h2>
+    <div class="col d-flex justify-content-evenly ">
+      <div class="col-md-10 d-flex justify-content-evenly ">
+
+        <div class="w-50 d-flex flex-column">
+          @for (item of ages; track $index) {
+          <div class="card w-100 d-flex justify-content-center ">
+            <mat-radio-button>
+              <span> {{item}} </span>
+            </mat-radio-button>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="px-5 d-flex justify-content-evenly pb-4">
+    <button class="myBtn px-5 py-3 " mat-flat-button (click)="movetoFirst()">
+      < Back </button>
+        <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToThird()"> Continue > </button>
+  </mat-dialog-actions>
+
+</div>
+
+<!-- third step -->
+<div class="d-flex flex-column h-100 justify-content-center" *ngIf="thirdStep">
+  <h5 mat-dialog-title class="text-center">Just answer simple questions</h5>
+  <mat-divider></mat-divider>
+
+  <mat-dialog-content class="mat-typography">
+    <h2 class="text-center">Select Educational Qualification</h2>
+    <div class="col d-flex justify-content-evenly ">
+      <div class="col-md-10 d-flex justify-content-evenly ">
+
+        <div class="w-50 d-flex flex-column">
+          <div class="card w-100 d-flex justify-content-center ">
+            <mat-radio-button>
+              <span> College graduate and above </span>
+            </mat-radio-button>
+          </div>
+          <div class="card w-100 d-flex justify-content-center ">
+            <mat-radio-button>
+              <span> 12th pass </span>
+            </mat-radio-button>
+          </div>
+          <div class="card w-100 d-flex justify-content-center ">
+            <mat-radio-button>
+              <span> 10th pass or below </span>
+            </mat-radio-button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="px-5 d-flex justify-content-evenly pb-4">
+    <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToSecond()">
+      < Back </button>
+        <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToFourth()"> Continue > </button>
+  </mat-dialog-actions>
+</div>
+
+<!-- fourth step -->
+<div class="d-flex flex-column h-100 justify-content-center" *ngIf="fourthStep">
+  <h5 mat-dialog-title class="text-center">Just answer simple questions</h5>
+  <mat-divider></mat-divider>
+  <mat-dialog-content class="mat-typography">
+    <h3 class="text-center">Do you Smoke or Chew tobacco?</h3>
+    <span class="d-flex justify-content-center">
+      select <strong>'Yes'</strong> if you have smoked or chewed tobacco in last 12 months
+    </span>
+    <div class="col d-flex justify-content-evenly ">
+      <div class="col-md-10 d-flex justify-content-evenly py-3">
+        <div class="card py-3 px-5">
+          <mat-radio-button> Yes </mat-radio-button>
+        </div>
+
+        <div class="card py-3 px-5">
+          <mat-radio-button>No</mat-radio-button>
+        </div>
+
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="px-5 d-flex justify-content-evenly pb-4">
+    <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToThird()">
+      < Back </button>
+        <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToFifth()"> Continue > </button>
+  </mat-dialog-actions>
+
+</div>
+
+<!-- fifth step -->
+<div class="d-flex flex-column h-100 justify-content-center" *ngIf="fifthStep">
+  <h5 mat-dialog-title class="text-center">Just answer simple questions</h5>
+  <mat-divider></mat-divider>
+
+  <mat-dialog-content class="mat-typography">
+    <h2 class="text-center">Select your city</h2>
+    <div class="col d-flex justify-content-evenly ">
+      <div class="col-md-10 d-flex justify-content-evenly ">
+        <mat-form-field appearance="fill" >
+          <mat-label>Select City</mat-label>
+          <mat-select [(value)]="city">
+              <mat-option *ngFor="let c of citys" [value]="c">{{ c }}</mat-option>
+          </mat-select>
+      </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="px-5 d-flex justify-content-evenly pb-4">
+    <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToFourth()">
+      < Back </button>
+        <button class="myBtn px-5 py-3 " mat-flat-button (click)="moveToPlans()"> Continue > </button>
+  </mat-dialog-actions>
+
+</div>

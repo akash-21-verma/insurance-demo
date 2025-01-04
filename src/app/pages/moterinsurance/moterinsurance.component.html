@@ -1,0 +1,55 @@
+<div class="custom-bg d-flex h-75 justify-content-center py-3" *ngIf="firstStep">
+    <div class="col-md-6 left d-flex justify-content-center align-items-center">
+        <img class="myLogo" src="https://static.pbcdn.in/car-cdn/car2.0/kapil2.png" alt="logo">
+    </div>
+    <div class="col-md-6 right d-flex">
+        <div class="card w-75 py-4 d-flex justify-content-evenly">
+            <h3 class="px-5 text-center card-title ">Compare & save upto 91%+ <br> on Car insurance</h3>
+            <div class="col d-flex justify-content-center align-items-center">
+                Renew in 2 minutes*
+            </div>
+            <div class="col w-100 px-5">
+                <mat-form-field class="w-100" appearance="fill">
+                    <input matInput placeholder="Enter car number">
+                </mat-form-field>
+            </div>
+            <div class="col text-center">
+                <button mat-flat-button class="myBtn" (click)="moveToSecond()">View plans -> </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- second step -->
+<div class="custom-bg d-flex h-75 justify-content-center py-3" *ngIf="secondStep">
+    <div class="col-md-6 left d-flex justify-content-center align-items-center">
+        <div class="card w-50 d-flex p-3">
+
+            <span class="d-flex justify-content-evenly"> <mat-icon> verified </mat-icon> We have
+                found your car </span>
+            <h4 class="text-center">MXXXXX XXXX</h4>
+            <span class="text-center text-muted">pterol - 2011</span>
+
+        </div>
+    </div>
+    <div class="col-md-6 right d-flex">
+        <div class="card w-75 py-4 d-flex justify-content-evenly">
+            <h5 class="px-5 text-center card-title ">Almost done! Just once last step</h5>
+            <div class="col w-100 px-5 mt-3">
+                <mat-form-field class="w-100" appearance="fill">
+                    <input matInput placeholder="Full name">
+                </mat-form-field>
+            </div>
+            <div class="col w-100 px-5">
+                <mat-form-field class="w-100" appearance="fill">
+                    <input matInput placeholder="mobile number">
+                </mat-form-field>
+            </div>
+            <div class="col d-flex justify-content-evenly">
+                <button mat-flat-button class="myBtn" (click)="movetoFirst()" > <- Back  </button>
+                <button mat-flat-button class="myBtn" (click)="movetoNext()" >View plans -> </button>
+            </div>
+        </div>
+    </div>
+</div>

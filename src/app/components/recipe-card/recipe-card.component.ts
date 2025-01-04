@@ -20,8 +20,10 @@ export class RecipeCardComponent {
   @Input() iconName:string = ''
   @Input() isSubtitleVisible:boolean = false
   @Input() subtitleValue:string = ''
+  @Input() pathValue:string = ''
+
   NavToDashBoard(){
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl(`${this.pathValue}`)
   }
 
 }
